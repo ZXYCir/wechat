@@ -17,9 +17,13 @@ defmodule Wechat.Plugs.MessageParser do
   ## Example
       plug Wechat.Plugs.MessageParser, [module: MyApp.Wechat]
   """
+  # def init(opts) do
+  #   module = Keyword.fetch!(opts, :module)
+  #   %{module: module}
+  # end
+
   def init(opts) do
-    module = Keyword.fetch!(opts, :module)
-    %{module: module}
+    Keyword.fetch!(opts, :module)
   end
 
   def call(%{method: "POST"} = conn, %{module: module}) do

@@ -13,9 +13,13 @@ defmodule Wechat.Plugs.RequestValidator do
   ## Example
       plug Wechat.Plugs.RequestValidator, module: MyApp.Wechat
   """
+  # def init(opts) do
+  #   module = Keyword.fetch!(opts, :module)
+  #   %{module: module}
+  # end
+
   def init(opts) do
-    module = Keyword.fetch!(opts, :module)
-    %{module: module}
+    Keyword.fetch!(opts, :module)
   end
 
   def call(conn, module) do
